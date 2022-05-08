@@ -3,7 +3,7 @@ import * as convert from 'convert-units';
 
 @Injectable()
 export class AppService {
-  getHello(): any {
+  getNutritionTable(): any {
     return convert(1).from('l').to('ml');
   }
 }
