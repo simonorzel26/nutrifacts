@@ -1,6 +1,8 @@
 /* eslint-disable prettier/prettier */
 import { Injectable } from '@nestjs/common';
 import * as convert from 'convert-units';
+
+// NutritionTable is based off of https://schema.org/NutritionInformation
 export type NutritionTable = {
   calories: number,               //	Energy	The number of calories.
   carbohydrateContent: number,    //	Mass	The number of grams of carbohydrates.
