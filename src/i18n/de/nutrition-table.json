@@ -1,0 +1,14 @@
+{
+    "calories": "Calories",
+    "carbohydrateContent": "Carbohydrates",
+    "cholesterolContent": "Cholesterol",
+    "fatContent": "Fat",
+    "fiberContent": "Fiber",
+    "proteinContent": "Protein",
+    "saturatedFatContent": "Saturated Fats",
+    "servingSize": "Serving Size",
+    "sodiumContent": "Sodium",
+    "sugarContent": "Sugars",
+    "transFatContent": "Trans Fats",
+    "unsaturatedFatContent": "Unsaturated Fats"
+}
