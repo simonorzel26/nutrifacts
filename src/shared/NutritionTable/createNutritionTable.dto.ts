@@ -6,13 +6,13 @@ export class CreateNutritionTableDto {
   reqConfig: ReqConfig;
 
   calories: NutritionalIngredient;
+  servingSize: NutritionalIngredient;
   carbohydrateContent: NutritionalIngredient;
   cholesterolContent: NutritionalIngredient;
   fatContent: NutritionalIngredient;
   fiberContent: NutritionalIngredient;
   proteinContent: NutritionalIngredient;
   saturatedFatContent: NutritionalIngredient;
-  servingSize: NutritionalIngredient;
   sodiumContent: NutritionalIngredient;
   sugarContent: NutritionalIngredient;
   transFatContent: NutritionalIngredient;
