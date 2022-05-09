@@ -11,7 +11,7 @@ export class AppService {
     createNutritionTableDto: CreateNutritionTableDto,
   ): NutritionTableData {
     // Calories don't need to be converted, only translated
-    const calories = (labelId) => {
+    const calories = (labelId: string) => {
       return {
         value: createNutritionTableDto[labelId].value,
         unit: this.i18n.translate(`units.${labelId}`),
@@ -19,7 +19,7 @@ export class AppService {
       };
     };
 
-    const ingredient = (labelId) => {
+    const ingredient = (labelId: string) => {
       const convertedValue = convert(createNutritionTableDto[labelId].value)
         .from(createNutritionTableDto[labelId].unit)
         .toBest();
