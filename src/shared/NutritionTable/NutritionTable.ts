@@ -22,6 +22,8 @@ export type NutritionTableData = {
 
   carbohydrateContent: NutritionalIngredient;
   fiberContent: NutritionalIngredient;
+  sugarContent: NutritionalIngredient;
+  starch?: NutritionalIngredient;
 
   cholesterolContent: NutritionalIngredient;
   proteinContent: NutritionalIngredient;
@@ -35,8 +37,14 @@ export type NutritionTableData = {
   polyUnsaturates?: NutritionalIngredient;
   polyols?: NutritionalIngredient;
 
-  sugarContent: NutritionalIngredient;
-  starch?: NutritionalIngredient;
+  potassium?: NutritionalIngredient;
+  vitaminC?: NutritionalIngredient;
+  calcium?: NutritionalIngredient;
+  iron?: NutritionalIngredient;
+  vitaminD?: NutritionalIngredient;
+  vitaminB6?: NutritionalIngredient;
+  cobalamin?: NutritionalIngredient;
+  magnesium?: NutritionalIngredient;
 
   // #TODO vitamins & minerals...  
   // https://ec.europa.eu/food/safety/labelling-and-nutrition/food-information-consumers-legislation/nutrition-labelling_en
@@ -50,4 +58,7 @@ export type ReqNutritionTableData = NutritionTableData & {
 
 export type ResNutritionTableData = NutritionTableData & {
   config: Config;
+  amountPerLabel: string;
+  percentDailyValueLabel: string;
+  percentDailyValueSubtext: string;
 };

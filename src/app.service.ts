@@ -13,34 +13,72 @@ export class AppService {
     reqNutritionTableData: ReqNutritionTableData,
   ): ResNutritionTableData {
     const energy = (labelId: string) => {
-      return {
-        value: reqNutritionTableData[labelId].value,
-        unit: this.i18n.translate(`units.${labelId}`),
-        label: this.i18n.translate(`nutrition-table.${labelId}`),
-      };
+      if (reqNutritionTableData[labelId]) {
+        return {
+          value: reqNutritionTableData[labelId].value,
+          unit: this.i18n.translate(`units.${labelId}`),
+          label: this.i18n.translate(`nutrition-table.${labelId}`),
+        };
+      }
     };
 
     const ingredient = (labelId: string) => {
-      const convertedValue = convert(reqNutritionTableData[labelId].value)
-        .from(reqNutritionTableData[labelId].unit)
-        .toBest();
-      return {
-        value: convertedValue.val,
-        unit: convertedValue.unit,
-        label: this.i18n.translate(`nutrition-table.${labelId}`),
-      };
+      if (reqNutritionTableData[labelId]) {
+        const convertedValue = convert(reqNutritionTableData[labelId].value)
+          .from(reqNutritionTableData[labelId].unit)
+          .toBest();
+        return {
+          value: convertedValue.val,
+          unit: convertedValue.unit,
+          label: this.i18n.translate(`nutrition-table.${labelId}`),
+        };
+      }
     };
 
-    const nutritionTable: ResNutritionTableData = reqNutritionTableData;
+    const resNutritionTable: ResNutritionTableData = {
+      config: {
+        inputUnitType: reqNutritionTableData.config.inputUnitType,
+      },
 
-    for (const [key] of Object.entries(reqNutritionTableData)) {
-      if (key !== 'config' && key !== 'calories' && key !== 'energy') {
-        nutritionTable[key] = ingredient(key);
-      } else if (key !== 'config') {
-        nutritionTable[key] = energy(key);
-      }
-    }
+      calories: energy('calories'),
+      energy: energy('energy'),
+      servingSize: ingredient('servingSize'),
 
-    return nutritionTable;
+      carbohydrateContent: ingredient('carbohydrateContent'),
+      fiberContent: ingredient('fiberContent'),
+      sugarContent: ingredient('sugarContent'),
+      starch: ingredient('starch'),
+
+      cholesterolContent: ingredient('cholesterolContent'),
+      proteinContent: ingredient('proteinContent'),
+      sodiumContent: ingredient('sodiumContent'),
+
+      fatContent: ingredient('fatContent'),
+      saturatedFatContent: ingredient('saturatedFatContent'),
+      transFatContent: ingredient('transFatContent'),
+      unsaturatedFatContent: ingredient('unsaturatedFatContent'),
+      monoUnsaturates: ingredient('monoUnsaturates'),
+      polyUnsaturates: ingredient('polyUnsaturates'),
+      polyols: ingredient('polyols'),
+
+      potassium: ingredient('potassium'),
+      vitaminC: ingredient('vitaminC'),
+      calcium: ingredient('calcium'),
+      iron: ingredient('iron'),
+      vitaminD: ingredient('vitaminD'),
+      vitaminB6: ingredient('vitaminB6'),
+      cobalamin: ingredient('cobalamin'),
+      magnesium: ingredient('magnesium'),
+
+      amountPerLabel: this.i18n.translate(`nutrition-table.amountPerLabel`),
+      percentDailyValueLabel: this.i18n.translate(
+        `nutrition-table.percentDailyValueLabel`,
+      ),
+      percentDailyValueSubtext: this.i18n.translate(
+        `nutrition-table.percentDailyValueSubtext`,
+      ),
+    };
+
+    return resNutritionTable;
   }
 }
