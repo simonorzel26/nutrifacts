@@ -13,19 +13,6 @@ export class AppService {
   getNutritionTable(
     reqNutritionTableData: ReqNutritionTableData,
   ): ResNutritionTableData {
-    const energy = (labelId: string) => {
-      let nutritionalIngredient: NutritionalIngredient = null;
-      if (reqNutritionTableData[labelId]) {
-        nutritionalIngredient = {
-          value: reqNutritionTableData[labelId].value,
-          unit: this.i18n.translate(`units.${labelId}`),
-          label: this.i18n.translate(`nutrition-table.${labelId}`),
-        };
-      }
-
-      return nutritionalIngredient;
-    };
-
     const ingredient = (labelId: string) => {
       let nutritionalIngredient: NutritionalIngredient = null;
 
