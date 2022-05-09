@@ -1,26 +1,34 @@
 import { Injectable } from '@nestjs/common';
+import { I18nService } from 'nestjs-i18n';
 import { CreateNutritionTableDto } from './shared/NutritionTable/createNutritionTable.dto';
 // import convert from 'convert-units';
-import { NutritionTable } from './shared/NutritionTable/NutritionTable';
+import { NutritionTableData } from './shared/NutritionTable/NutritionTable';
 @Injectable()
 export class AppService {
+  constructor(private readonly i18n: I18nService) {}
+
   getNutritionTable(
     createNutritionTableDto: CreateNutritionTableDto,
-  ): NutritionTable {
+  ): NutritionTableData {
     console.log(createNutritionTableDto);
-    const nutritionTable: NutritionTable = {
-      calories: 1,
-      carbohydrateContent: 1,
-      cholesterolContent: 1,
-      fatContent: 1,
-      fiberContent: 1,
-      proteinContent: 1,
-      saturatedFatContent: 1,
-      servingSize: 1,
-      sodiumContent: 1,
-      sugarContent: 1,
-      transFatContent: 1,
-      unsaturatedFatContent: 1,
+    const sampleIngredient = {
+      value: 1,
+      unit: 'g',
+      label: this.i18n.translate('nutrition-table.calories'),
+    };
+    const nutritionTable: NutritionTableData = {
+      calories: sampleIngredient,
+      carbohydrateContent: sampleIngredient,
+      cholesterolContent: sampleIngredient,
+      fatContent: sampleIngredient,
+      fiberContent: sampleIngredient,
+      proteinContent: sampleIngredient,
+      saturatedFatContent: sampleIngredient,
+      servingSize: sampleIngredient,
+      sodiumContent: sampleIngredient,
+      sugarContent: sampleIngredient,
+      transFatContent: sampleIngredient,
+      unsaturatedFatContent: sampleIngredient,
     };
     return nutritionTable;
   }

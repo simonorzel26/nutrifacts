@@ -1,7 +1,7 @@
 import { Body, Controller, Post } from '@nestjs/common';
 import { AppService } from './app.service';
 import { CreateNutritionTableDto } from './shared/NutritionTable/createNutritionTable.dto';
-import { NutritionTable } from './shared/NutritionTable/NutritionTable';
+import { NutritionTableData } from './shared/NutritionTable/NutritionTable';
 
 @Controller()
 export class AppController {
@@ -10,7 +10,7 @@ export class AppController {
   @Post()
   async getNutritionTable(
     @Body() createNutritionTableDto: CreateNutritionTableDto,
-  ): Promise<NutritionTable> {
+  ): Promise<NutritionTableData> {
     return this.appService.getNutritionTable(createNutritionTableDto);
   }
 }

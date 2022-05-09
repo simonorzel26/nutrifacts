@@ -2,28 +2,64 @@
     "reqConfig": {
       "inputUnitType": "metric"
     },
-    "calories": 1,
-    "caloriesUnit": "",
-    "carbohydrateContent": 1,
-    "carbohydrateContentUnit": "",
-    "cholesterolContent": 1,
-    "cholesterolContentUnit": "",
-    "fatContent": 1,
-    "fatContentUnit": "",
-    "fiberContent": 1,
-    "fiberContentUnit": "",
-    "proteinContent": 1,
-    "proteinContentUnit": "",
-    "saturatedFatContent": 1,
-    "saturatedFatContentUnit": "",
-    "servingSize": 1,
-    "servingSizeUnit": "",
-    "sodiumContent": 1,
-    "sodiumContentUnit": "",
-    "sugarContent": 1,
-    "sugarContentUnit": "",
-    "transFatContent": 1,
-    "transFatContentUnit": "",
-    "unsaturatedFatContent": 1,
-    "unsaturatedFatContentUnit": ""
+    "calories": {
+      "value": 1,
+      "unit": "g",
+      "label": "calories"
+    },
+    "carbohydrateContent": {
+      "value": 1,
+      "unit": "g",
+      "label": "calories"
+    },
+    "cholesterolContent": {
+      "value": 1,
+      "unit": "g",
+      "label": "calories"
+    },
+    "fatContent": {
+      "value": 1,
+      "unit": "g",
+      "label": "calories"
+    },
+    "fiberContent": {
+      "value": 1,
+      "unit": "g",
+      "label": "calories"
+    },
+    "proteinContent": {
+      "value": 1,
+      "unit": "g",
+      "label": "calories"
+    },
+    "saturatedFatContent": {
+      "value": 1,
+      "unit": "g",
+      "label": "calories"
+    },
+    "servingSize": {
+      "value": 1,
+      "unit": "g",
+      "label": "calories"
+    },
+    "sodiumContent": {
+      "value": 1,
+      "unit": "g",
+      "label": "calories"
+    },
+    "sugarContent": {
+      "value": 1,
+      "unit": "g",
+      "label": "calories"
+    },
+    "transFatContent": {
+      "value": 1,
+      "unit": "g",
+      "label": "calories"
+    },
+    "unsaturatedFatContent": {
+      "value": 1,
+      "unit": "g",
+      "label": "calories"
+    }
   }
