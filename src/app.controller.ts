@@ -1,8 +1,8 @@
 import { Body, Controller, Post } from '@nestjs/common';
 import { AppService } from './app.service';
 import {
-  NutritionTableData,
   ReqNutritionTableData,
+  ResNutritionTableData,
 } from './shared/NutritionTable/NutritionTable';
 
 @Controller()
@@ -12,7 +12,7 @@ export class AppController {
   @Post()
   async getNutritionTable(
     @Body() reqNutritionTableData: ReqNutritionTableData,
-  ): Promise<NutritionTableData> {
+  ): Promise<ResNutritionTableData> {
     return this.appService.getNutritionTable(reqNutritionTableData);
   }
 }

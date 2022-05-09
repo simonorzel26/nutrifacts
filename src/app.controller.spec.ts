@@ -71,16 +71,12 @@ describe('AppController', () => {
       );
     });
 
-    it('should return properly translated labels and units"', async () => {
+    it('should recieve config values', async () => {
       const nutritionTable = await appController.getNutritionTable(
         reqNutritionTableData,
       );
       expect(nutritionTable).toBeDefined();
-      expect(nutritionTable.calories.value).toBe(100);
-      expect(nutritionTable.calories.unit).toBe('Kcal');
-      expect(nutritionTable.calories.label).toBe(
-        nutritionLabelTranslationEN.calories,
-      );
+      expect(nutritionTable.config.inputUnitType).toBe('metric');
     });
   });
 });
