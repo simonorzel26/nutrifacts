@@ -38,9 +38,24 @@ describe('AppController', () => {
       );
       expect(nutritionTable).toBeDefined();
       expect(nutritionTable.calories.value).toBe(1);
-      expect(nutritionTable.calories.label).toBe(
-        nutritionLabelTranslationEN.calories,
-      );
+      expect(nutritionTable).toMatchObject({
+        calories: { value: 1, unit: 'g', label: 'Calories' },
+        carbohydrateContent: { value: 1, unit: 'g', label: 'Carbohydrates' },
+        cholesterolContent: { value: 1, unit: 'g', label: 'Cholesterol' },
+        fatContent: { value: 1, unit: 'g', label: 'Fat' },
+        fiberContent: { value: 1, unit: 'g', label: 'Fiber' },
+        proteinContent: { value: 1, unit: 'g', label: 'Protein' },
+        saturatedFatContent: { value: 1, unit: 'g', label: 'Saturated Fats' },
+        servingSize: { value: 1, unit: 'g', label: 'Serving Size' },
+        sodiumContent: { value: 1, unit: 'g', label: 'Sodium' },
+        sugarContent: { value: 1, unit: 'g', label: 'Sugars' },
+        transFatContent: { value: 1, unit: 'g', label: 'Trans Fats' },
+        unsaturatedFatContent: {
+          value: 1,
+          unit: 'g',
+          label: 'Unsaturated Fats',
+        },
+      });
     });
   });
 });

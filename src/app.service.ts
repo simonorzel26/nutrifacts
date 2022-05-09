@@ -10,7 +10,6 @@ export class AppService {
   getNutritionTable(
     createNutritionTableDto: CreateNutritionTableDto,
   ): NutritionTableData {
-    console.log(createNutritionTableDto);
     const ingredient = (labelId) => {
       return {
         value: createNutritionTableDto[labelId].value,
@@ -32,6 +31,7 @@ export class AppService {
       transFatContent: ingredient('transFatContent'),
       unsaturatedFatContent: ingredient('unsaturatedFatContent'),
     };
+    console.log(nutritionTable);
     return nutritionTable;
   }
 }
