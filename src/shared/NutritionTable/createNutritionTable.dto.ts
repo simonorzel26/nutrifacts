@@ -1,8 +1,9 @@
-import { Config } from './Config';
+import { ReqConfig } from './Config';
 
 /* eslint-disable prettier/prettier */
 export class CreateNutritionTableDto {
-  config: Config;
+  reqConfig: ReqConfig;
+
   calories: number;
   caloriesUnit: string;                 //	Energy	The number of calories.
   carbohydrateContent: number;

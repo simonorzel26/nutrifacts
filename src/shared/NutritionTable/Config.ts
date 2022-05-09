@@ -1,8 +1,8 @@
-enum nativeUnits {
-  Metric = 0,
-  Imperial = 1,
+enum inputUnitTypes {
+  Metric = 'metric',
+  Imperial = 'imperial',
 }
 
-export type Config = {
-  nativeUnits: nativeUnits;
+export type ReqConfig = {
+  inputUnitType: inputUnitTypes;
 };
