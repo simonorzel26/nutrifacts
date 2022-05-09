@@ -12,7 +12,7 @@ export type NutritionalIngredient = {
   value: number;
   unit: string;
   label?: string;
-};
+} | null;
 
 // NutritionTable is based off of https://schema.org/NutritionInformation
 export type NutritionTableData = {

@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { I18nService } from 'nestjs-i18n';
 import convert from 'convert-units';
 import {
+  NutritionalIngredient,
   ReqNutritionTableData,
   ResNutritionTableData,
 } from './shared/NutritionTable/NutritionTable';
@@ -13,26 +14,41 @@ export class AppService {
     reqNutritionTableData: ReqNutritionTableData,
   ): ResNutritionTableData {
     const energy = (labelId: string) => {
+      let nutritionalIngredient: NutritionalIngredient = null;
       if (reqNutritionTableData[labelId]) {
-        return {
+        nutritionalIngredient = {
           value: reqNutritionTableData[labelId].value,
           unit: this.i18n.translate(`units.${labelId}`),
           label: this.i18n.translate(`nutrition-table.${labelId}`),
         };
       }
+
+      return nutritionalIngredient;
     };
 
     const ingredient = (labelId: string) => {
+      let nutritionalIngredient: NutritionalIngredient = null;
+
       if (reqNutritionTableData[labelId]) {
-        const convertedValue = convert(reqNutritionTableData[labelId].value)
-          .from(reqNutritionTableData[labelId].unit)
-          .toBest();
-        return {
-          value: convertedValue.val,
-          unit: convertedValue.unit,
-          label: this.i18n.translate(`nutrition-table.${labelId}`),
-        };
+        if (labelId === 'energy' || labelId === 'calories') {
+          nutritionalIngredient = {
+            value: reqNutritionTableData[labelId].value,
+            unit: this.i18n.translate(`units.${labelId}`),
+            label: this.i18n.translate(`nutrition-table.${labelId}`),
+          };
+        } else {
+          const convertedValue = convert(reqNutritionTableData[labelId].value)
+            .from(reqNutritionTableData[labelId].unit)
+            .toBest();
+          nutritionalIngredient = {
+            value: convertedValue.val,
+            unit: convertedValue.unit,
+            label: this.i18n.translate(`nutrition-table.${labelId}`),
+          };
+        }
       }
+
+      return nutritionalIngredient;
     };
 
     const resNutritionTable: ResNutritionTableData = {
@@ -40,8 +56,8 @@ export class AppService {
         inputUnitType: reqNutritionTableData.config.inputUnitType,
       },
 
-      calories: energy('calories'),
-      energy: energy('energy'),
+      calories: ingredient('calories'),
+      energy: ingredient('energy'),
       servingSize: ingredient('servingSize'),
 
       carbohydrateContent: ingredient('carbohydrateContent'),
