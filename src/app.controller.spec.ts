@@ -46,7 +46,9 @@ describe('AppController', () => {
         reqNutritionTableData,
       );
       expect(nutritionTable).toBeDefined();
-      expect(nutritionTable.calories.value).toBe(100);
+      expect(nutritionTable.calories.value).toBe(
+        resNutritionTableData.calories.value,
+      );
       expect(nutritionTable.calories.unit).toBe('Kcal');
       expect(nutritionTable.calories.label).toBe(
         nutritionLabelTranslationEN.calories,

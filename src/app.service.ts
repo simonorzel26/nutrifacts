@@ -26,7 +26,7 @@ export class AppService {
         } else {
           const convertedValue = convert(reqNutritionTableData[labelId].value)
             .from(reqNutritionTableData[labelId].unit)
-            .toBest();
+            .toBest({ exclude: ['mcg'] });
           nutritionalIngredient = {
             value: convertedValue.val,
             unit: convertedValue.unit,

@@ -3,55 +3,55 @@
       "inputUnitType": "metric"
     },
     "calories": {
-      "value": 100,
+      "value": 140,
       "unit": "Kcal"
     },
-    "energy": {
-      "value": 100,
-      "unit": "kJ/100g"
-    },
     "servingSize": {
-      "value": 1,
+      "value": 131,
       "unit": "g"
-    },
+    }, 
     "carbohydrateContent": {
-      "value": 1,
+      "value": 22,
+      "unit": "g"
+    }, 
+    "fiberContent": {
+      "value": 6.94,
+      "unit": "g"
+    }, 
+    "sugarContent": {
+      "value": 2,
       "unit": "g"
     },
     "cholesterolContent": {
-      "value": 1,
-      "unit": "g"
-    },
-    "fatContent": {
-      "value": 1,
-      "unit": "g"
-    },
-    "fiberContent": {
-      "value": 1,
-      "unit": "g"
-    },
+      "value": 0,
+      "unit": "mg"
+    }, 
     "proteinContent": {
-      "value": 1,
+      "value": 6,
       "unit": "g"
-    },
-    "saturatedFatContent": {
-      "value": 1,
-      "unit": "g"
-    },
+    }, 
     "sodiumContent": {
-      "value": 1,
+      "value": 440,
+      "unit": "mg"
+    }, 
+    "fatContent": {
+      "value": 3.5,
+      "unit": "g"
+    }, 
+    "saturatedFatContent": {
+      "value": 0.2,
       "unit": "g"
     },
-    "sugarContent": {
-      "value": 1,
-      "unit": "g"
+    "potassium": {
+      "value": 520,
+      "unit": "mg"
+    }, 
+    "calcium": {
+      "value": 0,
+      "unit": "mg"
     },
-    "transFatContent": {
-      "value": 1,
-      "unit": "g"
-    },
-    "unsaturatedFatContent": {
-      "value": 1,
+    "vitaminD": {
+      "value": 0,
       "unit": "g"
     }
   }

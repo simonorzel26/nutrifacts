@@ -17,7 +17,7 @@ export type NutritionalIngredient = {
 // NutritionTable is based off of https://schema.org/NutritionInformation
 export type NutritionTableData = {
   calories: NutritionalIngredient;                    // kcal per 100g or 100ml
-  energy: NutritionalIngredient;                      // kJ per 100g or 100ml
+  energy?: NutritionalIngredient;                      // kJ per 100g or 100ml
   servingSize: NutritionalIngredient;
 
   carbohydrateContent: NutritionalIngredient;
