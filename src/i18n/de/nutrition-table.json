@@ -1,14 +1,19 @@
 {
     "calories": "Calories",
-    "carbohydrateContent": "Carbohydrates",
-    "cholesterolContent": "Cholesterol",
-    "fatContent": "Fat",
-    "fiberContent": "Fiber",
-    "proteinContent": "Protein",
-    "saturatedFatContent": "Saturated Fats",
+    "energy": "Energy",
     "servingSize": "Serving Size",
+    "carbohydrateContent": "Carbohydrates",
+    "fiberContent": "Fiber",
+    "cholesterolContent": "Cholesterol",
+    "proteinContent": "Protein",
     "sodiumContent": "Sodium",
-    "sugarContent": "Sugars",
+    "fatContent": "Fat",
+    "saturatedFatContent": "Saturated Fats",
     "transFatContent": "Trans Fats",
-    "unsaturatedFatContent": "Unsaturated Fats"
+    "unsaturatedFatContent": "Unsaturated Fats",
+    "monoUnsaturates": "Mono Unsaturated Fats",
+    "polyUnsaturates": "Poly Unsaturated Fats",
+    "polyols": "Polyols",
+    "sugarContent": "Sugars",
+    "starch": "Starch"
 }

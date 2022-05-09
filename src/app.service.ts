@@ -1,27 +1,28 @@
 import { Injectable } from '@nestjs/common';
 import { I18nService } from 'nestjs-i18n';
-import { CreateNutritionTableDto } from './shared/NutritionTable/createNutritionTable.dto';
 import convert from 'convert-units';
-import { NutritionTableData } from './shared/NutritionTable/NutritionTable';
+import {
+  ReqNutritionTableData,
+  ResNutritionTableData,
+} from './shared/NutritionTable/NutritionTable';
 @Injectable()
 export class AppService {
   constructor(private readonly i18n: I18nService) {}
 
   getNutritionTable(
-    createNutritionTableDto: CreateNutritionTableDto,
-  ): NutritionTableData {
-    // Calories don't need to be converted, only translated
-    const calories = (labelId: string) => {
+    reqNutritionTableData: ReqNutritionTableData,
+  ): ResNutritionTableData {
+    const energy = (labelId: string) => {
       return {
-        value: createNutritionTableDto[labelId].value,
+        value: reqNutritionTableData[labelId].value,
         unit: this.i18n.translate(`units.${labelId}`),
         label: this.i18n.translate(`nutrition-table.${labelId}`),
       };
     };
 
     const ingredient = (labelId: string) => {
-      const convertedValue = convert(createNutritionTableDto[labelId].value)
-        .from(createNutritionTableDto[labelId].unit)
+      const convertedValue = convert(reqNutritionTableData[labelId].value)
+        .from(reqNutritionTableData[labelId].unit)
         .toBest();
       return {
         value: convertedValue.val,
@@ -30,20 +31,16 @@ export class AppService {
       };
     };
 
-    const nutritionTable: NutritionTableData = {
-      calories: calories('calories'),
-      servingSize: ingredient('servingSize'),
-      carbohydrateContent: ingredient('carbohydrateContent'),
-      cholesterolContent: ingredient('cholesterolContent'),
-      fatContent: ingredient('fatContent'),
-      fiberContent: ingredient('fiberContent'),
-      proteinContent: ingredient('proteinContent'),
-      saturatedFatContent: ingredient('saturatedFatContent'),
-      sodiumContent: ingredient('sodiumContent'),
-      sugarContent: ingredient('sugarContent'),
-      transFatContent: ingredient('transFatContent'),
-      unsaturatedFatContent: ingredient('unsaturatedFatContent'),
-    };
+    const nutritionTable: ResNutritionTableData = reqNutritionTableData;
+
+    for (const [key] of Object.entries(reqNutritionTableData)) {
+      if (key !== 'config' && key !== 'calories' && key !== 'energy') {
+        nutritionTable[key] = ingredient(key);
+      } else if (key !== 'config') {
+        nutritionTable[key] = energy(key);
+      }
+    }
+
     return nutritionTable;
   }
 }

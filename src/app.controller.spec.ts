@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import createNutritionTableDtoJson from './shared/NutritionTable/createNutritionTableDto.json';
+import reqNutritionTableData from './shared/NutritionTable/reqNutritionTableData.json';
 import nutritionLabelTranslationEN from './i18n/en/nutrition-table.json';
 import path from 'path';
 import { AcceptLanguageResolver, I18nModule, QueryResolver } from 'nestjs-i18n';
@@ -53,7 +53,7 @@ describe('AppController', () => {
   describe('root', () => {
     it('should return nutrition table data"', async () => {
       const nutritionTable = await appController.getNutritionTable(
-        createNutritionTableDtoJson,
+        reqNutritionTableData,
       );
       expect(nutritionTable).toBeDefined();
       expect(nutritionTable).toMatchObject(exampleNutritionTableResponse);
@@ -61,7 +61,19 @@ describe('AppController', () => {
 
     it('should return properly translated labels and units"', async () => {
       const nutritionTable = await appController.getNutritionTable(
-        createNutritionTableDtoJson,
+        reqNutritionTableData,
+      );
+      expect(nutritionTable).toBeDefined();
+      expect(nutritionTable.calories.value).toBe(100);
+      expect(nutritionTable.calories.unit).toBe('Kcal');
+      expect(nutritionTable.calories.label).toBe(
+        nutritionLabelTranslationEN.calories,
+      );
+    });
+
+    it('should return properly translated labels and units"', async () => {
+      const nutritionTable = await appController.getNutritionTable(
+        reqNutritionTableData,
       );
       expect(nutritionTable).toBeDefined();
       expect(nutritionTable.calories.value).toBe(100);

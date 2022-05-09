@@ -1,10 +1,14 @@
 {
-    "reqConfig": {
+    "config": {
       "inputUnitType": "metric"
     },
     "calories": {
       "value": 100,
       "unit": "Kcal"
+    },
+    "energy": {
+      "value": 100,
+      "unit": "kJ/100g"
     },
     "servingSize": {
       "value": 1,
