@@ -20,4 +20,4 @@ export type NutritionTableData = {
   sugarContent: NutritionalIngredient;
   transFatContent: NutritionalIngredient;
   unsaturatedFatContent: NutritionalIngredient;
-  };
+};

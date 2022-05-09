@@ -11,24 +11,26 @@ export class AppService {
     createNutritionTableDto: CreateNutritionTableDto,
   ): NutritionTableData {
     console.log(createNutritionTableDto);
-    const sampleIngredient = {
-      value: 1,
-      unit: 'g',
-      label: this.i18n.translate('nutrition-table.calories'),
+    const ingredient = (labelId) => {
+      return {
+        value: createNutritionTableDto[labelId].value,
+        unit: createNutritionTableDto[labelId].unit,
+        label: this.i18n.translate(`nutrition-table.${labelId}`),
+      };
     };
     const nutritionTable: NutritionTableData = {
-      calories: sampleIngredient,
-      carbohydrateContent: sampleIngredient,
-      cholesterolContent: sampleIngredient,
-      fatContent: sampleIngredient,
-      fiberContent: sampleIngredient,
-      proteinContent: sampleIngredient,
-      saturatedFatContent: sampleIngredient,
-      servingSize: sampleIngredient,
-      sodiumContent: sampleIngredient,
-      sugarContent: sampleIngredient,
-      transFatContent: sampleIngredient,
-      unsaturatedFatContent: sampleIngredient,
+      calories: ingredient('calories'),
+      carbohydrateContent: ingredient('carbohydrateContent'),
+      cholesterolContent: ingredient('cholesterolContent'),
+      fatContent: ingredient('fatContent'),
+      fiberContent: ingredient('fiberContent'),
+      proteinContent: ingredient('proteinContent'),
+      saturatedFatContent: ingredient('saturatedFatContent'),
+      servingSize: ingredient('servingSize'),
+      sodiumContent: ingredient('sodiumContent'),
+      sugarContent: ingredient('sugarContent'),
+      transFatContent: ingredient('transFatContent'),
+      unsaturatedFatContent: ingredient('unsaturatedFatContent'),
     };
     return nutritionTable;
   }
