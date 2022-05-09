@@ -16,10 +16,12 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(
-        appController.getNutritionTable(createNutritionTableDtoJson),
-      ).toHaveProperty('calories');
+    it('should return nutrition table data"', async () => {
+      const nutritionTable = await appController.getNutritionTable(
+        createNutritionTableDtoJson,
+      );
+      expect(nutritionTable).toBeDefined();
+      expect(nutritionTable.calories).toBe(1);
     });
   });
 });

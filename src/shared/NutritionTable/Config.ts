@@ -4,5 +4,5 @@ enum inputUnitTypes {
 }
 
 export type ReqConfig = {
-  inputUnitType: inputUnitTypes;
+  inputUnitType: inputUnitTypes.Metric | inputUnitTypes.Imperial | string;
 };

@@ -1,9 +1,12 @@
 import { Injectable } from '@nestjs/common';
+import { CreateNutritionTableDto } from './shared/NutritionTable/createNutritionTable.dto';
 // import convert from 'convert-units';
 import { NutritionTable } from './shared/NutritionTable/NutritionTable';
 @Injectable()
 export class AppService {
-  getNutritionTable(createNutritionTableDto): NutritionTable {
+  getNutritionTable(
+    createNutritionTableDto: CreateNutritionTableDto,
+  ): NutritionTable {
     console.log(createNutritionTableDto);
     const nutritionTable: NutritionTable = {
       calories: 1,

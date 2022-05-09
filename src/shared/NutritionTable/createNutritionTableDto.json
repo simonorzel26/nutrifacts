@@ -1,4 +1,7 @@
 {
+    "reqConfig": {
+      "inputUnitType": "metric"
+    },
     "calories": 1,
     "caloriesUnit": "",
     "carbohydrateContent": 1,
