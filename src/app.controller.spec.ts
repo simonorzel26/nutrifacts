@@ -41,6 +41,7 @@ describe('AppController', () => {
       expect(nutritionTable.calories.label).toBe(
         nutritionLabelTranslationEN.calories,
       );
+      
     });
   });
 });
