@@ -5,9 +5,9 @@ import {
   NutritionalIngredient,
   ReqNutritionTableData,
   ResNutritionTableData,
-} from './shared/NutritionTable/NutritionTable';
+} from './NutritionTable';
 @Injectable()
-export class AppService {
+export class NutritionTableService {
   constructor(private readonly i18n: I18nService) {}
 
   getNutritionTable(
