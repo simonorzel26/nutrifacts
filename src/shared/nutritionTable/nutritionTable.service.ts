@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { I18nService } from 'nestjs-i18n';
 import convert from 'convert-units';
+import { excludedUnits } from '../constants/excludedUnits';
 import {
   NutritionalIngredient,
   ReqNutritionTableData,
@@ -26,7 +27,7 @@ export class NutritionTableService {
         } else {
           const convertedValue = convert(reqNutritionTableData[labelId].value)
             .from(reqNutritionTableData[labelId].unit)
-            .toBest({ exclude: ['mcg'] });
+            .toBest({ exclude: excludedUnits });
           nutritionalIngredient = {
             value: convertedValue.val,
             unit: convertedValue.unit,
