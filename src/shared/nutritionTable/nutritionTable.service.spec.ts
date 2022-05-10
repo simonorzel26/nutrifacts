@@ -52,5 +52,17 @@ describe('EventsService', () => {
     expect(nutritionTable).toBeDefined();
     expect(nutritionTable.config.inputUnitType).toBe('metric');
   });
+ 
+  it('should return an energy value in kJ/J', async () => {
+    const nutritionTable = await appController.getNutritionTable(
+      reqNutritionTableData,
+    );
+    expect(nutritionTable).toBeDefined();
+    expect(nutritionTable.energy.value).toBe(585.76);
+    expect(nutritionTable.energy.unit).toBe('kJ');
+    expect(nutritionTable.energy.label).toBe(
+      nutritionLabelTranslationEN.energy,
+    );
+  });
 });
 

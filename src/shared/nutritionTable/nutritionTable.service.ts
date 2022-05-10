@@ -7,6 +7,7 @@ import {
   ReqNutritionTableData,
   ResNutritionTableData,
 } from './NutritionTable';
+import { calTokJ } from '../calculations/conversions';
 @Injectable()
 export class NutritionTableService {
   constructor(private readonly i18n: I18nService) {}
@@ -14,11 +15,20 @@ export class NutritionTableService {
   getNutritionTable(
     reqNutritionTableData: ReqNutritionTableData,
   ): ResNutritionTableData {
+    const energy = (labelId: string) => {
+      const kJVal =  calTokJ(reqNutritionTableData['calories'].value);
+      return {
+        value: kJVal,
+        unit: this.i18n.translate(`units.${labelId}`),
+        label: this.i18n.translate(`nutrition-table.${labelId}`),
+      };
+    }
+
     const ingredient = (labelId: string) => {
       let nutritionalIngredient: NutritionalIngredient = null;
 
       if (reqNutritionTableData[labelId]) {
-        if (labelId === 'energy' || labelId === 'calories') {
+        if (labelId === 'calories') {
           nutritionalIngredient = {
             value: reqNutritionTableData[labelId].value,
             unit: this.i18n.translate(`units.${labelId}`),
@@ -45,7 +55,7 @@ export class NutritionTableService {
       },
 
       calories: ingredient('calories'),
-      energy: ingredient('energy'),
+      energy: energy('energy'),
       servingSize: ingredient('servingSize'),
 
       carbohydrateContent: ingredient('carbohydrateContent'),
