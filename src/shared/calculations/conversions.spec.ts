@@ -15,4 +15,7 @@ describe('roundNumber', () => {
   it('should return proper rounded number to set decimal', () => {
     expect(roundNumber(1.1234567, 5)).toBe(1.12346);
   });
+  it('should return proper rounded negative number to set decimal', () => {
+    expect(roundNumber(-1.1234567, 5)).toBe(-1.12346);
+  });
 });
