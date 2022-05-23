@@ -1,8 +1,8 @@
-import { nutritionTableTemplate } from "./nutritionTableTemplate";
+import { varToString, replaceVariable, nutritionTableTemplate } from "./nutritionTableTemplate";
 import resNutritionTableData from '../resNutritionTableData.json';
 
 describe('nutritionTableTemplate template', () => {
-  
+
   it('should return the base nutritionTable template', async () => {
     expect(nutritionTableTemplate(resNutritionTableData)).toBeDefined();
   });
