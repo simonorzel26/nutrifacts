@@ -2,56 +2,63 @@
   "config": {
     "inputUnitType": "metric"
   },
-  "calories": {
-    "value": 140,
-    "unit": "Kcal"
+  "nutritionTableData": {
+    "calories": {
+      "value": 140,
+      "unit": "Kcal"
+    },
+    "servingSize": {
+      "value": 131,
+      "unit": "g"
+    }, 
+    "carbohydrateContent": {
+      "value": 22,
+      "unit": "g"
+    }, 
+    "fiberContent": {
+      "value": 6.94,
+      "unit": "g"
+    }, 
+    "sugarContent": {
+      "value": 2,
+      "unit": "g"
+    },
+    "cholesterolContent": {
+      "value": 0,
+      "unit": "mg"
+    }, 
+    "proteinContent": {
+      "value": 6,
+      "unit": "g"
+    }, 
+    "sodiumContent": {
+      "value": 440,
+      "unit": "mg"
+    }, 
+    "fatContent": {
+      "value": 3.5,
+      "unit": "g"
+    }, 
+    "saturatedFatContent": {
+      "value": 200,
+      "unit": "mg"
+    },
+    "potassium": {
+      "value": 520,
+      "unit": "mg"
+    }, 
+    "calcium": {
+      "value": 0,
+      "unit": "mg"
+    },
+    "vitaminD": {
+      "value": 0,
+      "unit": "mg"
+    }
   },
-  "servingSize": {
-    "value": 131,
-    "unit": "g"
-  }, 
-  "carbohydrateContent": {
-    "value": 22,
-    "unit": "g"
-  }, 
-  "fiberContent": {
-    "value": 6.94,
-    "unit": "g"
-  }, 
-  "sugarContent": {
-    "value": 2,
-    "unit": "g"
-  },
-  "cholesterolContent": {
-    "value": 0,
-    "unit": "mg"
-  }, 
-  "proteinContent": {
-    "value": 6,
-    "unit": "g"
-  }, 
-  "sodiumContent": {
-    "value": 440,
-    "unit": "mg"
-  }, 
-  "fatContent": {
-    "value": 3.5,
-    "unit": "g"
-  }, 
-  "saturatedFatContent": {
-    "value": 200,
-    "unit": "mg"
-  },
-  "potassium": {
-    "value": 520,
-    "unit": "mg"
-  }, 
-  "calcium": {
-    "value": 0,
-    "unit": "mg"
-  },
-  "vitaminD": {
-    "value": 0,
-    "unit": "mg"
+  "labels": {
+    "amountPerLabel": "Amount per",
+    "percentDailyValueLabel": "Percent Daily",
+    "percentDailyValueSubtext": "Percent Daily subtext"
   }
 }

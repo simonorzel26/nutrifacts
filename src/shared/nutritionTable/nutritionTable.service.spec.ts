@@ -36,11 +36,11 @@ describe('EventsService', () => {
       reqNutritionTableData,
     );
     expect(nutritionTable).toBeDefined();
-    expect(nutritionTable.calories.value).toBe(
-      reqNutritionTableData.calories.value,
+    expect(nutritionTable.nutritionTableData.calories.value).toBe(
+      reqNutritionTableData.nutritionTableData.calories.value,
     );
-    expect(nutritionTable.calories.unit).toBe('Kcal');
-    expect(nutritionTable.calories.label).toBe(
+    expect(nutritionTable.nutritionTableData.calories.unit).toBe('Kcal');
+    expect(nutritionTable.nutritionTableData.calories.label).toBe(
       nutritionLabelTranslationEN.calories,
     );
   });
@@ -58,9 +58,9 @@ describe('EventsService', () => {
       reqNutritionTableData,
     );
     expect(nutritionTable).toBeDefined();
-    expect(nutritionTable.energy.value).toBe(585.76);
-    expect(nutritionTable.energy.unit).toBe('kJ');
-    expect(nutritionTable.energy.label).toBe(
+    expect(nutritionTable.nutritionTableData.energy.value).toBe(585.76);
+    expect(nutritionTable.nutritionTableData.energy.unit).toBe('kJ');
+    expect(nutritionTable.nutritionTableData.energy.label).toBe(
       nutritionLabelTranslationEN.energy,
     );
   });

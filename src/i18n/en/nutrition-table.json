@@ -15,5 +15,8 @@
     "polyUnsaturates": "Poly Unsaturated Fats",
     "polyols": "Polyols",
     "sugarContent": "Sugars",
-    "starch": "Starch"
+    "starch": "Starch",
+    "amountPerLabel": "Amount per",
+    "percentDailyValueLabel": "Percent Daily",
+    "percentDailyValueSubtext": "Percent Daily subtext"
 }

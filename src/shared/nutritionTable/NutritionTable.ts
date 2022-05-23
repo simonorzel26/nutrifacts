@@ -52,13 +52,17 @@ export type NutritionTableData = {
   
 };
 
-export type ReqNutritionTableData = NutritionTableData & {
-  config: Config;
-};
-
-export type ResNutritionTableData = NutritionTableData & {
-  config: Config;
+export type Labels = {
   amountPerLabel: string;
   percentDailyValueLabel: string;
   percentDailyValueSubtext: string;
+}
+
+export type ReqNutritionTableData = {
+  config: Config;
+  nutritionTableData: NutritionTableData;
+};
+
+export type ResNutritionTableData = ReqNutritionTableData & {
+  labels: Labels;
 };
