@@ -16,13 +16,15 @@ export class NutritionTableService {
     reqNutritionTableData: ReqNutritionTableData,
   ): ResNutritionTableData {
     const energy = (labelId: string) => {
-      const kJVal =  calTokJ(reqNutritionTableData.nutritionTableData['calories'].value);
+      const kJVal = calTokJ(
+        reqNutritionTableData.nutritionTableData['calories'].value,
+      );
       return {
         value: kJVal,
         unit: this.i18n.translate(`units.${labelId}`),
         label: this.i18n.translate(`nutrition-table.${labelId}`),
       };
-    }
+    };
 
     const ingredient = (labelId: string) => {
       let nutritionalIngredient: NutritionalIngredient = null;
@@ -35,7 +37,9 @@ export class NutritionTableService {
             label: this.i18n.translate(`nutrition-table.${labelId}`),
           };
         } else {
-          const convertedValue = convert(reqNutritionTableData.nutritionTableData[labelId].value)
+          const convertedValue = convert(
+            reqNutritionTableData.nutritionTableData[labelId].value,
+          )
             .from(reqNutritionTableData.nutritionTableData[labelId].unit)
             .toBest({ exclude: excludedUnits });
           nutritionalIngredient = {
@@ -92,7 +96,7 @@ export class NutritionTableService {
         percentDailyValueSubtext: this.i18n.translate(
           `nutrition-table.percentDailyValueSubtext`,
         ),
-      }
+      },
     };
 
     return resNutritionTable;

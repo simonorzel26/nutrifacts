@@ -5,11 +5,14 @@
   </head>
 
   <body>
-    {{ nutritionTableData.calories.value }}
     <section class="performance-facts">
       <header class="performance-facts__header">
         <h1 class="performance-facts__title">Nutrition Facts</h1>
-        <p>Serving Size 1/2 cup (about 82g)</p>
+        <p>
+          {{ nutritionTableData.servingSize.label }}
+          {{ nutritionTableData.servingSize.value }}
+          {{ nutritionTableData.servingSize.unit }}
+        </p>
         <p>Serving Per Container 8</p>
       </header>
       <table class="performance-facts__table">

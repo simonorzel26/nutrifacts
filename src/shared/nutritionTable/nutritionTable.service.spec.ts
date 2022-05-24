@@ -6,7 +6,7 @@ import { NutritionTableService } from './nutritionTable.service';
 import nutritionLabelTranslationEN from './../../i18n/en/nutrition-table.json';
 import reqNutritionTableData from './reqNutritionTableData.json';
 
-describe('EventsService', () => {
+describe('NutritionTableService', () => {
   let appController: NutritionTableController;
 
   beforeEach(async () => {
@@ -30,7 +30,7 @@ describe('EventsService', () => {
 
     appController = app.get<NutritionTableController>(NutritionTableController);
   });
-  
+
   it('should return properly translated labels and units"', async () => {
     const nutritionTable = await appController.getNutritionTable(
       reqNutritionTableData,
@@ -52,7 +52,7 @@ describe('EventsService', () => {
     expect(nutritionTable).toBeDefined();
     expect(nutritionTable.config.inputUnitType).toBe('metric');
   });
- 
+
   it('should return an energy value in kJ/J', async () => {
     const nutritionTable = await appController.getNutritionTable(
       reqNutritionTableData,
@@ -65,4 +65,3 @@ describe('EventsService', () => {
     );
   });
 });
-

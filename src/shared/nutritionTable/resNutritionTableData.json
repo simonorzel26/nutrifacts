@@ -5,55 +5,123 @@
   "nutritionTableData": {
     "calories": {
       "value": 140,
-      "unit": "Kcal"
+      "unit": "Kcal",
+      "label": "Calories"
+    },
+    "energy": {
+      "value": 585.76,
+      "unit": "kJ",
+      "label": "Energy"
     },
     "servingSize": {
       "value": 131,
-      "unit": "g"
+      "unit": "g",
+      "label": "Serving Size"
     },
     "carbohydrateContent": {
       "value": 22,
-      "unit": "g"
-    }, 
+      "unit": "g",
+      "label": "Carbohydrates"
+    },
     "fiberContent": {
       "value": 6.94,
-      "unit": "g"
-    }, 
+      "unit": "g",
+      "label": "Fiber"
+    },
     "sugarContent": {
       "value": 2,
-      "unit": "g"
+      "unit": "g",
+      "label": "Sugars"
+    },
+    "starch": {
+      "value": 0,
+      "unit": "mg",
+      "label": "Starch"
     },
     "cholesterolContent": {
       "value": 0,
-      "unit": "mg"
-    }, 
+      "unit": "mg",
+      "label": "Cholesterol"
+    },
     "proteinContent": {
       "value": 6,
-      "unit": "g"
-    }, 
+      "unit": "g",
+      "label": "Protein"
+    },
     "sodiumContent": {
       "value": 440,
-      "unit": "mg"
-    }, 
+      "unit": "mg",
+      "label": "Sodium"
+    },
     "fatContent": {
       "value": 3.5,
-      "unit": "g"
-    }, 
+      "unit": "g",
+      "label": "Fat"
+    },
     "saturatedFatContent": {
       "value": 200,
-      "unit": "mg"
+      "unit": "mg",
+      "label": "Saturated Fats"
+    },
+    "transFatContent": {
+      "value": 0,
+      "unit": "mg",
+      "label": "Trans Fats"
+    },
+    "unsaturatedFatContent": {
+      "value": 0,
+      "unit": "mg",
+      "label": "Unsaturated Fats"
+    },
+    "monoUnsaturates": {
+      "value": 0,
+      "unit": "mg",
+      "label": "Mono Unsaturated Fats"
+    },
+    "polyUnsaturates": {
+      "value": 0,
+      "unit": "mg",
+      "label": "Poly Unsaturated Fats"
+    },
+    "polyols": {
+      "value": 0,
+      "unit": "mg",
+      "label": "Polyols"
     },
     "potassium": {
       "value": 520,
-      "unit": "mg"
-    }, 
+      "unit": "mg",
+      "label": "nutrition-table.potassium"
+    },
     "calcium": {
       "value": 0,
-      "unit": "mg"
+      "unit": "mg",
+      "label": "nutrition-table.calcium"
     },
     "vitaminD": {
       "value": 0,
-      "unit": "mg"
+      "unit": "mg",
+      "label": "nutrition-table.vitaminD"
+    },
+    "vitaminB6": {
+      "label": "vitaminB6",
+      "unit": "mg",
+      "value": 0
+    },
+    "vitaminC": {
+      "label": "vitaminC",
+      "unit": "mg",
+      "value": 0
+    },
+    "iron": {
+      "label": "iron",
+      "unit": "mg",
+      "value": 0
+    },
+    "magnesium": {
+      "label": "magnesium",
+      "unit": "mg",
+      "value": 0
     }
   },
   "labels": {
