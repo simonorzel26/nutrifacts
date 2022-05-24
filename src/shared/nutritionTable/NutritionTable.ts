@@ -18,7 +18,7 @@ export type NutritionalIngredient = {
 export type NutritionTableData = {
   calories: NutritionalIngredient;                    // kcal per 100g or 100ml
   energy?: NutritionalIngredient;                      // kJ per 100g or 100ml
-  servingSize: NutritionalIngredient;
+  servingSize?: NutritionalIngredient;
 
   carbohydrateContent: NutritionalIngredient;
   fiberContent: NutritionalIngredient;

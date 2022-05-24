@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post, Render } from '@nestjs/common';
 import {
   ReqNutritionTableData,
   ResNutritionTableData,
@@ -14,5 +14,11 @@ export class NutritionTableController {
     @Body() reqNutritionTableData: ReqNutritionTableData,
   ): Promise<ResNutritionTableData> {
     return this.nutritionTableService.getNutritionTable(reqNutritionTableData);
+  }
+
+  @Get('nutritionTable')
+  @Render('nutritionTableTemplate')
+  async getNutritionTableHtml() {
+    return {};
   }
 }
