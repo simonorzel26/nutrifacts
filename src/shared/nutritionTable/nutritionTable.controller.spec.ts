@@ -40,4 +40,13 @@ describe('AppController', () => {
       expect(nutritionTable).toMatchObject(resNutritionTableData);
     });
   });
+
+  describe('nutritionTable', () => {
+    it('should return nutrition table data"', async () => {
+      const nutritionTableHtml = await appController.getNutritionTableHtml(
+        reqNutritionTableData,
+      );
+      expect(nutritionTableHtml).toBeDefined();
+    });
+  });
 });

@@ -7,11 +7,10 @@
       "value": 140,
       "unit": "Kcal"
     },
-    "wo": {
+    "servingSize": {
       "value": 131,
       "unit": "g"
     },
-    "servingSize": null,
     "carbohydrateContent": {
       "value": 22,
       "unit": "g"
