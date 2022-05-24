@@ -18,7 +18,7 @@ export class NutritionTableController {
 
   @Get('nutritionTable')
   @Render('nutritionTableTemplate')
-  async getNutritionTableHtml() {
-    return {};
+  async getNutritionTableHtml(@Body() reqNutritionTableData: ReqNutritionTableData) {
+    return this.nutritionTableService.getNutritionTable(reqNutritionTableData);
   }
 }
