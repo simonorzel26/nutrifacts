@@ -48,7 +48,7 @@
   <body>
     <section class='performance-facts'>
       <header class='performance-facts__header'>
-        <h1 class='performance-facts__title'>Nutrition Facts</h1>
+        <h1 class='performance-facts__title'>{{labels.nutritionFactsLabel}}</h1>
         <p>
           {{nutritionTableData.servingSize.label}}
           {{nutritionTableData.servingSize.value}}
@@ -76,7 +76,7 @@
           </tr>
           <tr class='thick-row'>
             <td colspan='3' class='small-info'>
-              <b>% Daily Value*</b>
+              <b>% {{labels.dailyValueLabel}}*</b>
             </td>
           </tr>
           <tr>

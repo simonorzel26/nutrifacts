@@ -26,5 +26,7 @@
     "potassium": "Potassium",
     "amountPerLabel": "Amount per",
     "percentDailyValueLabel": "Percent Daily",
-    "percentDailyValueSubtext": "Percent Daily subtext"
+    "percentDailyValueSubtext": "Percent Daily subtext",
+    "dailyValueLabel": "Daily Value",
+    "nutritionFactsLabel": "Nutrition Facts"
 }

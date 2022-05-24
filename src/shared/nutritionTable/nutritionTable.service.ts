@@ -96,6 +96,10 @@ export class NutritionTableService {
         percentDailyValueSubtext: this.i18n.translate(
           `nutrition-table.percentDailyValueSubtext`,
         ),
+        dailyValueLabel: this.i18n.translate(`nutrition-table.dailyValueLabel`),
+        nutritionFactsLabel: this.i18n.translate(
+          `nutrition-table.nutritionFactsLabel`,
+        ),
       },
     };
 

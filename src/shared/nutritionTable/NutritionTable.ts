@@ -56,6 +56,8 @@ export type Labels = {
   amountPerLabel: string;
   percentDailyValueLabel: string;
   percentDailyValueSubtext: string;
+  dailyValueLabel: string;
+  nutritionFactsLabel: string;
 }
 
 export type ReqNutritionTableData = {
