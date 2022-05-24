@@ -103,10 +103,5 @@
         "value": 0,
         "unit": "g"
       }
-    },
-    "labels": {
-      "amountPerLabel": "Amount per",
-      "percentDailyValueLabel": "Percent Daily",
-      "percentDailyValueSubtext": "Percent Daily subtext"
     }
   }

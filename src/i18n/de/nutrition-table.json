@@ -4,6 +4,7 @@
     "servingSize": "Serving Size",
     "carbohydrateContent": "Carbohydrates",
     "fiberContent": "Fiber",
+    "sugarContent": "Sugars",
     "cholesterolContent": "Cholesterol",
     "proteinContent": "Protein",
     "sodiumContent": "Sodium",
@@ -14,6 +15,13 @@
     "monoUnsaturates": "Mono Unsaturated Fats",
     "polyUnsaturates": "Poly Unsaturated Fats",
     "polyols": "Polyols",
-    "sugarContent": "Sugars",
-    "starch": "Starch"
+    "starch": "Starch",
+    "amountPerLabel": "Amount per",
+    "percentDailyValueLabel": "Percent Daily",
+    "percentDailyValueSubtext": "Percent Daily subtext",
+    "vitaminC": "vitaminC",
+    "iron": "iron",
+    "vitaminB6": "vitaminB6",
+    "cobalamin": "cobalamin",
+    "magnesium": "magnesium"
 }

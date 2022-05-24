@@ -1,8 +1,5 @@
-import { Body, Controller, Get, Post, Render } from '@nestjs/common';
-import {
-  ReqNutritionTableData,
-  ResNutritionTableData,
-} from './NutritionTable';
+import { Body, Controller, Post, Render } from '@nestjs/common';
+import { ReqNutritionTableData, ResNutritionTableData } from './NutritionTable';
 import { NutritionTableService } from './nutritionTable.service';
 
 @Controller()

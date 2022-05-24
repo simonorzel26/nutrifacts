@@ -91,35 +91,35 @@
     "potassium": {
       "value": 520,
       "unit": "mg",
-      "label": "nutrition-table.potassium"
+      "label": "Potassium"
     },
     "calcium": {
       "value": 0,
       "unit": "mg",
-      "label": "nutrition-table.calcium"
+      "label": "Calcium"
     },
     "vitaminD": {
       "value": 0,
       "unit": "mg",
-      "label": "nutrition-table.vitaminD"
+      "label": "VitaminD"
     },
     "vitaminB6": {
-      "label": "vitaminB6",
+      "label": "Vitamin B6",
       "unit": "mg",
       "value": 0
     },
     "vitaminC": {
-      "label": "vitaminC",
+      "label": "Vitamin C",
       "unit": "mg",
       "value": 0
     },
     "iron": {
-      "label": "iron",
+      "label": "Iron",
       "unit": "mg",
       "value": 0
     },
     "magnesium": {
-      "label": "magnesium",
+      "label": "Magnesium",
       "unit": "mg",
       "value": 0
     }
