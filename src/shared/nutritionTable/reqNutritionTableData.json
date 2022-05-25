@@ -11,6 +11,10 @@
         "value": 0,
         "unit": "g"
       },
+      "servingPerContainer": {
+        "value": 8,
+        "unit": "g"
+      }, 
       "servingSize": {
         "value": 131,
         "unit": "g"

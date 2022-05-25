@@ -13,6 +13,10 @@
       "unit": "kJ",
       "label": "Energy"
     },
+    "servingPerContainer": {
+      "value": 8,
+      "unit": "g"
+    }, 
     "servingSize": {
       "value": 131,
       "unit": "g",
@@ -125,7 +129,7 @@
     }
   },
   "labels": {
-    "amountPerLabel": "Amount per",
+    "amountPerServingLabel": "Amount per Serving",
     "percentDailyValueLabel": "Percent Daily",
     "percentDailyValueSubtext": "Percent Daily subtext",
     "dailyValueLabel": "Daily Value",

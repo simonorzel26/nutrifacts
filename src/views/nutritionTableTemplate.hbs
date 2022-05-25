@@ -49,20 +49,20 @@
     <section class='performance-facts'>
       <header class='performance-facts__header'>
         <h1 class='performance-facts__title'>{{labels.nutritionFactsLabel}}</h1>
+        <p>{{nutritionTableData.servingPerContainer.label}}
+          {{nutritionTableData.servingPerContainer.value}}</p>
         <p>
           {{nutritionTableData.servingSize.label}}
           {{nutritionTableData.servingSize.value}}
           {{nutritionTableData.servingSize.unit}}
         </p>
-        <p>Serving Per Container 8</p>
       </header>
       <table class='performance-facts__table'>
         <thead>
           <tr>
-            <th
-              colspan='3'
-              class='small-info'
-            >{{nutritionTableData.labels.amountPerLabel}}</th>
+            <th colspan='2'>
+              <b>{{labels.amountPerServingLabel}}</b>
+            </th>
           </tr>
         </thead>
         <tbody>

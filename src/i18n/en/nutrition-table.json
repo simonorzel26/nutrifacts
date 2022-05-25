@@ -1,6 +1,7 @@
 {
     "calories": "Calories",
     "energy": "Energy",
+    "servingPerContainer": "Serving Per Container",
     "servingSize": "Serving Size",
     "carbohydrateContent": "Carbohydrates",
     "fiberContent": "Fiber",
@@ -24,7 +25,7 @@
     "magnesium": "Magnesium",
     "calcium": "Calcium",
     "potassium": "Potassium",
-    "amountPerLabel": "Amount per",
+    "amountPerServingLabel": "Amount per Serving",
     "percentDailyValueLabel": "Percent Daily",
     "percentDailyValueSubtext": "Percent Daily subtext",
     "dailyValueLabel": "Daily Value",

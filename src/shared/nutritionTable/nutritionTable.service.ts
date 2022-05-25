@@ -60,6 +60,7 @@ export class NutritionTableService {
       nutritionTableData: {
         calories: ingredient('calories'),
         energy: energy('energy'),
+        servingPerContainer: ingredient('servingPerContainer'),
         servingSize: ingredient('servingSize'),
 
         carbohydrateContent: ingredient('carbohydrateContent'),
@@ -89,7 +90,7 @@ export class NutritionTableService {
         magnesium: ingredient('magnesium'),
       },
       labels: {
-        amountPerLabel: this.i18n.translate(`nutrition-table.amountPerLabel`),
+        amountPerServingLabel: this.i18n.translate(`nutrition-table.amountPerServingLabel`),
         percentDailyValueLabel: this.i18n.translate(
           `nutrition-table.percentDailyValueLabel`,
         ),

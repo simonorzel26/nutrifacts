@@ -14,12 +14,7 @@ export type NutritionalIngredient = {
   label?: string;
 } | null;
 
-// NutritionTable is based off of https://schema.org/NutritionInformation
-export type NutritionTableData = {
-  calories: NutritionalIngredient;                    // kcal per 100g or 100ml
-  energy?: NutritionalIngredient;                      // kJ per 100g or 100ml
-  servingSize?: NutritionalIngredient;
-
+export type Ingredients = {
   carbohydrateContent: NutritionalIngredient;
   fiberContent: NutritionalIngredient;
   sugarContent: NutritionalIngredient;
@@ -50,10 +45,18 @@ export type NutritionTableData = {
   // https://ec.europa.eu/food/safety/labelling-and-nutrition/food-information-consumers-legislation/nutrition-labelling_en
   // https://europa.eu/youreurope/business/product-requirements/food-labelling/nutrition-declaration/index_en.htm
   
+}
+
+// NutritionTable is based off of https://schema.org/NutritionInformation
+export type NutritionTableData = Ingredients & {
+  calories: NutritionalIngredient;                    // kcal per 100g or 100ml
+  energy?: NutritionalIngredient;                      // kJ per 100g or 100ml
+  servingPerContainer?: NutritionalIngredient;
+  servingSize?: NutritionalIngredient;
 };
 
 export type Labels = {
-  amountPerLabel: string;
+  amountPerServingLabel: string;
   percentDailyValueLabel: string;
   percentDailyValueSubtext: string;
   dailyValueLabel: string;
