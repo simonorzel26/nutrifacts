@@ -1,4 +1,4 @@
-import { Unit } from "convert-units";
+import { Unit } from 'convert-units';
 
 type ExcludedUnits = Unit[];
 
@@ -11,19 +11,19 @@ export const excludedUnits: ExcludedUnits = [
   'ft',
   'mi',
   'mcg',
-//   'mg',
-//   'g',
+  //   'mg',
+  //   'g',
   'kg',
-//   'oz',
+  //   'oz',
   'lb',
   'mt',
   't',
-//   'ml',
+  //   'ml',
   'l',
-//   'tsp',
-//   'Tbs',
-//   'fl-oz',
-//   'cup',
+  //   'tsp',
+  //   'Tbs',
+  //   'fl-oz',
+  //   'cup',
   'pnt',
   'qt',
   'gal',

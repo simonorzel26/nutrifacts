@@ -12,6 +12,7 @@ export type NutritionalIngredient = {
   value: number;
   unit: string;
   label?: string;
+  dailyValuePercent?: number;
 } | null;
 
 export type Ingredients = {

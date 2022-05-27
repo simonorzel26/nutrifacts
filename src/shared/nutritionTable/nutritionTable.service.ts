@@ -7,7 +7,8 @@ import {
   ReqNutritionTableData,
   ResNutritionTableData,
 } from './NutritionTable';
-import { calTokJ } from '../calculations/conversions';
+import { calcDailyValuePercent, calTokJ } from '../calculations/conversions';
+import { dailyValues } from '../constants/dailyValues';
 @Injectable()
 export class NutritionTableService {
   constructor(private readonly i18n: I18nService) {}
@@ -47,6 +48,15 @@ export class NutritionTableService {
             unit: convertedValue.unit,
             label: this.i18n.translate(`nutrition-table.${labelId}`),
           };
+
+          const dailyReccomendedValue = dailyValues[labelId];
+
+          if (dailyReccomendedValue) {
+            nutritionalIngredient.dailyValuePercent = calcDailyValuePercent(
+              dailyReccomendedValue,
+              nutritionalIngredient,
+            );
+          }
         }
       }
 
@@ -90,7 +100,9 @@ export class NutritionTableService {
         magnesium: ingredient('magnesium'),
       },
       labels: {
-        amountPerServingLabel: this.i18n.translate(`nutrition-table.amountPerServingLabel`),
+        amountPerServingLabel: this.i18n.translate(
+          `nutrition-table.amountPerServingLabel`,
+        ),
         percentDailyValueLabel: this.i18n.translate(
           `nutrition-table.percentDailyValueLabel`,
         ),
