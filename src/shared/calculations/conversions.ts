@@ -24,7 +24,7 @@ export const calcDailyValuePercent = (
       .to(dailyReccomendedValue.unit as Unit);
     const dailyValuePercent =
       (ingredientValueAsGram / dailyReccomendedValue.value) * 100;
-    return roundNumber(dailyValuePercent, 1);
+    return Math.round(dailyValuePercent);
   }
   return 0;
 };
