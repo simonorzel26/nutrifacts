@@ -63,7 +63,22 @@ describe('calcDailyValuePercent', () => {
     };
     expect(
       calcDailyValuePercent(dailyReccomendedValue, nutritionalIngredient),
-    ).toBe(66.7);
+    ).toBe(67);
+  });
+
+  it('should calculate the daily value properly with over values', () => {
+    const dailyReccomendedValue = {
+      value: 500,
+      unit: 'mg',
+    };
+
+    const nutritionalIngredient = {
+      value: 50,
+      unit: 'g',
+    };
+    expect(
+      calcDailyValuePercent(dailyReccomendedValue, nutritionalIngredient),
+    ).toBe(10000);
   });
 
   it('should calculate the daily value properly with 0s', () => {
