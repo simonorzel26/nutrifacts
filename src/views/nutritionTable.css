@@ -34,6 +34,9 @@ p {
 .performance-facts__header p {
   margin: 0;
 }
+.performance-facts__table th b {
+  margin-right: 5px;
+}
 .performance-facts__table, .performance-facts__table--small, .performance-facts__table--grid {
   width: 100%;
 }
