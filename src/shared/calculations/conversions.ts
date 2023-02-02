@@ -15,15 +15,15 @@ export const roundNumber = (number: number, decimalPoints?: number): number => {
 };
 
 export const calcDailyValuePercent = (
-  dailyReccomendedValue: NutritionalIngredient,
+  dailyRecommendedValue: NutritionalIngredient,
   nutritionalIngredient: NutritionalIngredient,
 ) => {
-  if (dailyReccomendedValue.value && nutritionalIngredient.value) {
+  if (dailyRecommendedValue.value && nutritionalIngredient.value) {
     const ingredientValueAsGram = convert(nutritionalIngredient.value)
       .from(nutritionalIngredient.unit as Unit)
-      .to(dailyReccomendedValue.unit as Unit);
+      .to(dailyRecommendedValue.unit as Unit);
     const dailyValuePercent =
-      (ingredientValueAsGram / dailyReccomendedValue.value) * 100;
+      (ingredientValueAsGram / dailyRecommendedValue.value) * 100;
     return Math.round(dailyValuePercent);
   }
   return 0;

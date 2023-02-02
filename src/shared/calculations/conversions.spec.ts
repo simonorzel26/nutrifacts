@@ -22,7 +22,7 @@ describe('roundNumber', () => {
 
 describe('calcDailyValuePercent', () => {
   it('should calculate the daily value properly with base 10s', () => {
-    const dailyReccomendedValue = {
+    const dailyRecommendedValue = {
       value: 100,
       unit: 'g',
     };
@@ -32,12 +32,12 @@ describe('calcDailyValuePercent', () => {
       unit: 'g',
     };
     expect(
-      calcDailyValuePercent(dailyReccomendedValue, nutritionalIngredient),
+      calcDailyValuePercent(dailyRecommendedValue, nutritionalIngredient),
     ).toBe(10);
   });
 
   it('should calculate the daily value properly with random numbers', () => {
-    const dailyReccomendedValue = {
+    const dailyRecommendedValue = {
       value: 275,
       unit: 'g',
     };
@@ -47,12 +47,12 @@ describe('calcDailyValuePercent', () => {
       unit: 'g',
     };
     expect(
-      calcDailyValuePercent(dailyReccomendedValue, nutritionalIngredient),
+      calcDailyValuePercent(dailyRecommendedValue, nutritionalIngredient),
     ).toBe(8);
   });
 
   it('should calculate the daily value properly with different units', () => {
-    const dailyReccomendedValue = {
+    const dailyRecommendedValue = {
       value: 300,
       unit: 'mg',
     };
@@ -62,12 +62,12 @@ describe('calcDailyValuePercent', () => {
       unit: 'g',
     };
     expect(
-      calcDailyValuePercent(dailyReccomendedValue, nutritionalIngredient),
+      calcDailyValuePercent(dailyRecommendedValue, nutritionalIngredient),
     ).toBe(67);
   });
 
   it('should calculate the daily value properly with over values', () => {
-    const dailyReccomendedValue = {
+    const dailyRecommendedValue = {
       value: 500,
       unit: 'mg',
     };
@@ -77,12 +77,12 @@ describe('calcDailyValuePercent', () => {
       unit: 'g',
     };
     expect(
-      calcDailyValuePercent(dailyReccomendedValue, nutritionalIngredient),
+      calcDailyValuePercent(dailyRecommendedValue, nutritionalIngredient),
     ).toBe(10000);
   });
 
   it('should calculate the daily value properly with 0s', () => {
-    const dailyReccomendedValue = {
+    const dailyRecommendedValue = {
       value: 0,
       unit: 'mg',
     };
@@ -92,10 +92,10 @@ describe('calcDailyValuePercent', () => {
       unit: 'g',
     };
     expect(
-      calcDailyValuePercent(dailyReccomendedValue, nutritionalIngredient),
+      calcDailyValuePercent(dailyRecommendedValue, nutritionalIngredient),
     ).toBe(0);
 
-    const dailyReccomendedValue2 = {
+    const dailyRecommendedValue2 = {
       value: 0.2,
       unit: 'mg',
     };
@@ -105,10 +105,10 @@ describe('calcDailyValuePercent', () => {
       unit: 'g',
     };
     expect(
-      calcDailyValuePercent(dailyReccomendedValue2, nutritionalIngredient2),
+      calcDailyValuePercent(dailyRecommendedValue2, nutritionalIngredient2),
     ).toBe(0);
 
-    const dailyReccomendedValue3 = {
+    const dailyRecommendedValue3 = {
       value: 0,
       unit: 'mg',
     };
@@ -118,7 +118,7 @@ describe('calcDailyValuePercent', () => {
       unit: 'g',
     };
     expect(
-      calcDailyValuePercent(dailyReccomendedValue3, nutritionalIngredient3),
+      calcDailyValuePercent(dailyRecommendedValue3, nutritionalIngredient3),
     ).toBe(0);
   });
 });

@@ -49,11 +49,11 @@ export class NutritionTableService {
             label: this.i18n.translate(`nutrition-table.${labelId}`),
           };
 
-          const dailyReccomendedValue = dailyValues[labelId];
+          const dailyRecommendedValue = dailyValues[labelId];
 
-          if (dailyReccomendedValue) {
+          if (dailyRecommendedValue) {
             nutritionalIngredient.dailyValuePercent = calcDailyValuePercent(
-              dailyReccomendedValue,
+              dailyRecommendedValue,
               nutritionalIngredient,
             );
           }
