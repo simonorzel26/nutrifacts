@@ -2,6 +2,9 @@
 
 Format nutritional data into a nutrition table.
 
+![image](https://user-images.githubusercontent.com/60504110/216325344-cbdcbe26-6c0d-43be-9a6c-bc1914c12b56.png)
+
+
 Demo:
 https://nutrifacts-site.vercel.app/
 
