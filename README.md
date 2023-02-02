@@ -1,6 +1,9 @@
 ## Description
 
-Backend api for nutrifacts 
+Format nutritional data into a nutrition table.
+
+Demo:
+https://nutrifacts-site.vercel.app/
 
 ## Installation
 
