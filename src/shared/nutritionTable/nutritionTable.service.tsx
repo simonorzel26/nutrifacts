@@ -1,14 +1,17 @@
+import React from 'react';
 import { Injectable } from '@nestjs/common';
 import { I18nService } from 'nestjs-i18n';
+import { renderToString } from 'react-dom/server';
 import convert from 'convert-units';
 import { excludedUnits } from '../constants/excludedUnits';
 import {
   NutritionalIngredient,
   ReqNutritionTableData,
   ResNutritionTableData,
-} from './NutritionTable';
+} from './NutritionTable.entity';
 import { calcDailyValuePercent, calTokJ } from '../calculations/conversions';
 import { dailyValues } from '../constants/dailyValues';
+import { NutritionTable } from 'src/components/NutritionTable';
 @Injectable()
 export class NutritionTableService {
   constructor(private readonly i18n: I18nService) {}
@@ -117,5 +120,32 @@ export class NutritionTableService {
     };
 
     return resNutritionTable;
+  }
+
+  renderTable(resNutritionTable: ResNutritionTableData) {
+    return renderToString(
+      <html>
+        <head>
+          <html lang="en">
+            <head>
+              <meta charSet="UTF-8" />
+              <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+              <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1.0"
+              />
+              <title>Nutrifacts</title>
+              <link rel="stylesheet" href="/table.css" />
+            </head>
+            <body>
+              <NutritionTable
+                nutritionTableData={resNutritionTable.nutritionTableData}
+                labels={resNutritionTable.labels}
+              />
+            </body>
+          </html>
+        </head>
+      </html>,
+    );
   }
 }

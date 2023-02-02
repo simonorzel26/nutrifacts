@@ -1,21 +1,21 @@
 /* eslint-disable prettier/prettier */
-enum inputUnitTypes {
+enum InputUnitType {
   Metric = 'metric',
   Imperial = 'imperial',
 }
 
-type Config = {
-  inputUnitType: inputUnitTypes.Metric | inputUnitTypes.Imperial | string;
+class Config  {
+  inputUnitType: InputUnitType.Metric | InputUnitType.Imperial | string;
 };
 
-export type NutritionalIngredient = {
+export class NutritionalIngredient  {
   value: number;
   unit: string;
   label?: string;
   dailyValuePercent?: number;
 };
 
-export type Ingredients = {
+export class Ingredients  {
   carbohydrateContent: NutritionalIngredient;
   fiberContent: NutritionalIngredient;
   sugarContent: NutritionalIngredient;
@@ -49,14 +49,14 @@ export type Ingredients = {
 }
 
 // NutritionTable is based off of https://schema.org/NutritionInformation
-export type NutritionTableData = Ingredients & {
+export class NutritionTableData extends Ingredients  {
   calories: NutritionalIngredient;                    // kcal per 100g or 100ml
   energy?: NutritionalIngredient;                      // kJ per 100g or 100ml
   servingPerContainer?: NutritionalIngredient;
   servingSize?: NutritionalIngredient;
 };
 
-export type Labels = {
+export class Labels  {
   amountPerServingLabel: string;
   percentDailyValueLabel: string;
   percentDailyValueSubtext: string;
@@ -64,11 +64,11 @@ export type Labels = {
   nutritionFactsLabel: string;
 }
 
-export type ReqNutritionTableData = {
+export class ReqNutritionTableData  {
   config: Config;
   nutritionTableData: NutritionTableData;
 };
 
-export type ResNutritionTableData = ReqNutritionTableData & {
+export class ResNutritionTableData extends ReqNutritionTableData  {
   labels: Labels;
 };

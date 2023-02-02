@@ -1,5 +1,5 @@
 import convert, { Unit } from 'convert-units';
-import { NutritionalIngredient } from '../nutritionTable/NutritionTable';
+import { NutritionalIngredient } from '../nutritionTable/NutritionTable.entity';
 
 const calTokJMultiple = 4.184;
 
