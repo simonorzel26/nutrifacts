@@ -48,6 +48,8 @@ $ npm run test:cov
 /nutritionTable
 
 example req
+
+<details>
 ```
 {
   "config": {
@@ -161,8 +163,11 @@ example req
   }
 }
 ```
+</details>
 
 Response
+
+<details>
 ```
 {
   "config": {
@@ -303,3 +308,5 @@ Response
   }
 }
 ```
+</details>
+
