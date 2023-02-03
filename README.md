@@ -1,6 +1,6 @@
 ## Description 😫
 
-A microservice to calculate regional nutritional daily values, localize units and nutrition table translations.
+A microservice to calculate regional nutritional daily values, localize units and translate nutrition table key names.
 
 ![image](https://user-images.githubusercontent.com/60504110/216325344-cbdcbe26-6c0d-43be-9a6c-bc1914c12b56.png)
 
