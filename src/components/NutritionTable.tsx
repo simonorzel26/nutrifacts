@@ -78,7 +78,6 @@ export function NutritionTable({ labels, nutritionTableData }: Props) {
             </th>
             <td></td>
           </tr>
-          {nutritionTableData.cholesterolContent &&
           <tr>
             <th colSpan={2}>
               <b>{nutritionTableData.cholesterolContent.label}</b>{' '}
@@ -89,7 +88,6 @@ export function NutritionTable({ labels, nutritionTableData }: Props) {
               <b>{nutritionTableData.cholesterolContent.dailyValuePercent}%</b>
             </td>
           </tr>
-          }
           <tr>
             <th colSpan={2}>
               <b>{nutritionTableData.sodiumContent.label}</b>{' '}
