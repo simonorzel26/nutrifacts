@@ -1,11 +1,11 @@
 import React from 'react';
 import {
   Labels,
-  NutritionTableData,
+  NutritionalIngredient,
 } from 'src/shared/nutritionTable/NutritionTable.entity';
 
 type Props = {
-  nutritionTableData: NutritionTableData;
+  nutritionTableData: {[key: string]:NutritionalIngredient};
   labels: Labels;
 };
 
@@ -78,6 +78,7 @@ export function NutritionTable({ labels, nutritionTableData }: Props) {
             </th>
             <td></td>
           </tr>
+          {nutritionTableData.cholesterolContent &&
           <tr>
             <th colSpan={2}>
               <b>{nutritionTableData.cholesterolContent.label}</b>{' '}
@@ -88,6 +89,7 @@ export function NutritionTable({ labels, nutritionTableData }: Props) {
               <b>{nutritionTableData.cholesterolContent.dailyValuePercent}%</b>
             </td>
           </tr>
+          }
           <tr>
             <th colSpan={2}>
               <b>{nutritionTableData.sodiumContent.label}</b>{' '}

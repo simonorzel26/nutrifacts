@@ -1,21 +1,21 @@
 /* eslint-disable prettier/prettier */
-enum InputUnitType {
+enum inputUnitTypes {
   Metric = 'metric',
   Imperial = 'imperial',
 }
 
-class Config  {
-  inputUnitType: InputUnitType.Metric | InputUnitType.Imperial | string;
+type Config = {
+  inputUnitType: inputUnitTypes.Metric | inputUnitTypes.Imperial | string;
 };
 
-export class NutritionalIngredient  {
+export type NutritionalIngredient = {
   value: number;
   unit: string;
   label?: string;
   dailyValuePercent?: number;
-};
+} | undefined;
 
-export class Ingredients  {
+export type Ingredients = {
   carbohydrateContent: NutritionalIngredient;
   fiberContent: NutritionalIngredient;
   sugarContent: NutritionalIngredient;
@@ -45,18 +45,18 @@ export class Ingredients  {
   // #TODO vitamins & minerals...  
   // https://ec.europa.eu/food/safety/labelling-and-nutrition/food-information-consumers-legislation/nutrition-labelling_en
   // https://europa.eu/youreurope/business/product-requirements/food-labelling/nutrition-declaration/index_en.htm
-  
+
 }
 
 // NutritionTable is based off of https://schema.org/NutritionInformation
-export class NutritionTableData extends Ingredients  {
+export type NutritionTableData = Ingredients & {
   calories: NutritionalIngredient;                    // kcal per 100g or 100ml
   energy?: NutritionalIngredient;                      // kJ per 100g or 100ml
   servingPerContainer?: NutritionalIngredient;
   servingSize?: NutritionalIngredient;
 };
 
-export class Labels  {
+export type Labels = {
   amountPerServingLabel: string;
   percentDailyValueLabel: string;
   percentDailyValueSubtext: string;
@@ -64,11 +64,11 @@ export class Labels  {
   nutritionFactsLabel: string;
 }
 
-export class ReqNutritionTableData  {
+export type ReqNutritionTableData = {
   config: Config;
-  nutritionTableData: NutritionTableData;
+  nutritionTableData: {[key: string]:NutritionalIngredient};
 };
 
-export class ResNutritionTableData extends ReqNutritionTableData  {
+export type ResNutritionTableData = ReqNutritionTableData & {
   labels: Labels;
 };

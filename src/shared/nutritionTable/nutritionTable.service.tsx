@@ -2,7 +2,7 @@ import React from 'react';
 import { Injectable } from '@nestjs/common';
 import { I18nService } from 'nestjs-i18n';
 import { renderToString } from 'react-dom/server';
-import convert from 'convert-units';
+import convert, { Unit } from 'convert-units';
 import { excludedUnits } from '../constants/excludedUnits';
 import {
   NutritionalIngredient,
@@ -13,16 +13,20 @@ import { calcDailyValuePercent, calTokJ } from '../calculations/conversions';
 import { dailyValues } from '../constants/dailyValues';
 import { NutritionTable } from 'src/components/NutritionTable';
 @Injectable()
-export class NutritionTableService {
-  constructor(private readonly i18n: I18nService) {}
+export default class NutritionTableService {
+  constructor(private readonly i18n: I18nService) { }
 
   getNutritionTable(
     reqNutritionTableData: ReqNutritionTableData,
   ): ResNutritionTableData {
-    const energy = (labelId: string) => {
+    const energy = (labelId: string): NutritionalIngredient | undefined => {
+      const ingredient = reqNutritionTableData.nutritionTableData['calories'];
+      if (!ingredient) return;
+
       const kJVal = calTokJ(
-        reqNutritionTableData.nutritionTableData['calories'].value,
+        ingredient.value,
       );
+
       return {
         value: kJVal,
         unit: this.i18n.translate(`units.${labelId}`),
@@ -30,40 +34,48 @@ export class NutritionTableService {
       };
     };
 
-    const ingredient = (labelId: string) => {
-      let nutritionalIngredient: NutritionalIngredient = null;
+    const ingredient = (labelId: string): NutritionalIngredient | undefined => {
+      const ingredient = reqNutritionTableData.nutritionTableData[labelId];
+      if (!ingredient) return;
 
-      if (reqNutritionTableData.nutritionTableData[labelId]) {
-        if (labelId === 'calories') {
-          nutritionalIngredient = {
-            value: reqNutritionTableData.nutritionTableData[labelId].value,
+      if (ingredient) {
+        if (labelId === 'calories' && ingredient.value) {
+          return {
+            value: ingredient.value,
             unit: this.i18n.translate(`units.${labelId}`),
             label: this.i18n.translate(`nutrition-table.${labelId}`),
           };
         } else {
           const convertedValue = convert(
-            reqNutritionTableData.nutritionTableData[labelId].value,
+            ingredient.value,
           )
-            .from(reqNutritionTableData.nutritionTableData[labelId].unit)
+            .from(ingredient.unit as Unit)
             .toBest({ exclude: excludedUnits });
-          nutritionalIngredient = {
+
+          const nutritionalIngredient = {
             value: convertedValue.val,
             unit: convertedValue.unit,
             label: this.i18n.translate(`nutrition-table.${labelId}`),
+            dailyValuePercent: 0
           };
 
-          const dailyRecommendedValue = dailyValues[labelId];
+          const dailyReccomendedValue = dailyValues[labelId];
 
-          if (dailyRecommendedValue) {
-            nutritionalIngredient.dailyValuePercent = calcDailyValuePercent(
-              dailyRecommendedValue,
+          if (dailyReccomendedValue) {
+            const dailyValuePercent = calcDailyValuePercent(
+              dailyReccomendedValue,
               nutritionalIngredient,
             );
+            if (!dailyValuePercent) return;
+
+            nutritionalIngredient.dailyValuePercent = dailyValuePercent;
           }
+
+          return nutritionalIngredient;
         }
       }
 
-      return nutritionalIngredient;
+      return;
     };
 
     const resNutritionTable: ResNutritionTableData = {

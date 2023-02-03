@@ -1,6 +1,7 @@
-import { Ingredients } from '../nutritionTable/NutritionTable.entity';
+import { NutritionalIngredient } from "../nutritionTable/NutritionTable.entity";
 
-export const dailyValues: Partial<Ingredients> = {
+
+export const dailyValues: {[key: string]:NutritionalIngredient} = {
   carbohydrateContent: {
     value: 275,
     unit: 'g',

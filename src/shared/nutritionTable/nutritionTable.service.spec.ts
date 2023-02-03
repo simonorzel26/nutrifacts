@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { AcceptLanguageResolver, I18nModule, QueryResolver } from 'nestjs-i18n';
 import path from 'path';
 import { NutritionTableController } from './nutritionTable.controller';
-import { NutritionTableService } from './nutritionTable.service';
+import NutritionTableService from './nutritionTable.service';
 import nutritionLabelTranslationEN from './../../i18n/en/nutrition-table.json';
 import reqNutritionTableData from './reqNutritionTableData.json';
 
