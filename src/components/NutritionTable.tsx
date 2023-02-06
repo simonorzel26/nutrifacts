@@ -1,11 +1,11 @@
 import React from 'react';
 import {
   Labels,
-  NutritionTableData,
+  NutritionalIngredient,
 } from 'src/shared/nutritionTable/NutritionTable.entity';
 
 type Props = {
-  nutritionTableData: NutritionTableData;
+  nutritionTableData: {[key: string]:NutritionalIngredient};
   labels: Labels;
 };
 

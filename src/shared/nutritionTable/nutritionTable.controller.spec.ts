@@ -4,7 +4,7 @@ import reqNutritionTableData from './reqNutritionTableData.json';
 import resNutritionTableData from './resNutritionTableData.json';
 import path from 'path';
 import { AcceptLanguageResolver, I18nModule, QueryResolver } from 'nestjs-i18n';
-import { NutritionTableService } from './nutritionTable.service';
+import NutritionTableService from './nutritionTable.service;
 
 describe('AppController', () => {
   let appController: NutritionTableController;

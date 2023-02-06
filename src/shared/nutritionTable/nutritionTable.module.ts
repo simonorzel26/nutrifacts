@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { AcceptLanguageResolver, I18nModule, QueryResolver } from 'nestjs-i18n';
 import path from 'path';
 import { NutritionTableController } from './nutritionTable.controller';
-import { NutritionTableService } from './nutritionTable.service';
+import NutritionTableService from './nutritionTable.service';
 
 @Module({
   imports: [

@@ -3,7 +3,7 @@ import {
   ReqNutritionTableData,
   ResNutritionTableData,
 } from './NutritionTable.entity';
-import { NutritionTableService } from './nutritionTable.service';
+import NutritionTableService from './nutritionTable.service';
 
 @Controller()
 export class NutritionTableController {
