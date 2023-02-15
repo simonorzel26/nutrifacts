@@ -2,7 +2,7 @@
 
 A microservice to calculate regional nutritional daily values, localize units and translate nutrition table key names.
 
-Currently supports languages:
+Currently supports languagess:
 - en
 - de
 - 
