@@ -313,3 +313,15 @@ Response
 ```
 </details>
 
+
+## Contributors Guide
+- [ ] Insure translations are working
+- [ ] Adding other languages
+- [ ] Adding puppeteer screen shotting of frontend rendered nutrition table
+- [ ] Separating Frontend nutrition table into npm component
+
+## License
+- The project is not to be used for any commercial use wihout the prior agreement of the original Author
+
+## Author
+- [simonorzel26](https://github.com/simonorzel26)
