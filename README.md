@@ -1,327 +1,116 @@
-## Description 😫
 
-A microservice to calculate regional nutritional daily values, localize units and translate nutrition table key names.
+# NutriFacts Microservice 🍏
 
-Currently supports languagess:
-- en
-- de
-- 
-Demo:
-https://nutrifacts-site.vercel.app/
+## Overview 🌟
 
+NutriFacts is a dynamic microservice designed to compute regional nutritional daily values, localize measurement units, and translate key names of nutrition tables into multiple languages. It leverages the robustness of NestJS to offer a scalable and efficient solution for nutrition data management.
 
+### Features 🚀
+- **Multi-Language Support**: Currently supports English (en) and German (de), with plans to expand to more languages.
+- **Unit Localization**: Converts nutritional units based on regional preferences (e.g., metric to imperial).
+- **Dynamic Translation**: Translates nutrition table key names for global accessibility.
+- **Customizable Responses**: Configurable endpoints to tailor nutrition data based on specific requirements.
 
-![image](https://user-images.githubusercontent.com/60504110/216325344-cbdcbe26-6c0d-43be-9a6c-bc1914c12b56.png)
+### Live Demo 🖥
+Check out the live demo here: [NutriFacts Demo](https://nutrifacts-site.vercel.app/)
 
+![NutriFacts Interface](https://user-images.githubusercontent.com/60504110/216325344-cbdcbe26-6c0d-43be-9a6c-bc1914c12b56.png)
 
+## Getting Started 🛠
 
-## Installation
+### Installation
+
+To set up the project locally, run:
 
 ```bash
 $ yarn install
 ```
 
-## Running the app
+### Running the Application
 
 ```bash
-# development
+# For development
 $ yarn start
 
-# watch mode
+# For live reload
 $ yarn start:dev
 
-# production mode
+# For production
 $ yarn start:prod
 ```
 
-## Test
+### Testing
 
 ```bash
-# unit tests
+# Unit tests
 $ yarn test
 
-# e2e tests
+# End-to-end tests
 $ yarn test:e2e
 
-# test coverage
+# Test coverage
 $ yarn test:cov
 ```
 
-## Endpoints POST
-/nutritionTable
+## API Endpoints 📡
 
-example req
+### POST `/nutritionTable`
+
+#### Request Example
 
 <details>
-```
+<summary>Click to expand!</summary>
+
+```json
 {
   "config": {
     "inputUnitType": "metric"
   },
   "nutritionTableData": {
-    "calories": {
-      "value": 140,
-      "unit": "Kcal"
-    },
-    "energy": {
-      "value": 0,
-      "unit": "g"
-    },
-    "servingPerContainer": {
-      "value": 8,
-      "unit": "g"
-    },
-    "servingSize": {
-      "value": 131,
-      "unit": "g"
-    },
-    "carbohydrateContent": {
-      "value": 22,
-      "unit": "g"
-    },
-    "fiberContent": {
-      "value": 6.94,
-      "unit": "g"
-    },
-    "sugarContent": {
-      "value": 2,
-      "unit": "g"
-    },
-    "cholesterolContent": {
-      "value": 10,
-      "unit": "mg"
-    },
-    "proteinContent": {
-      "value": 6,
-      "unit": "g"
-    },
-    "sodiumContent": {
-      "value": 440,
-      "unit": "mg"
-    },
-    "fatContent": {
-      "value": 3.5,
-      "unit": "g"
-    },
-    "saturatedFatContent": {
-      "value": 0.2,
-      "unit": "g"
-    },
-    "potassium": {
-      "value": 520,
-      "unit": "mg"
-    },
-    "calcium": {
-      "value": 0,
-      "unit": "mg"
-    },
-    "vitaminD": {
-      "value": 0,
-      "unit": "g"
-    },
-    "transFatContent": {
-      "value": 0,
-      "unit": "g"
-    },
-    "unsaturatedFatContent": {
-      "value": 0,
-      "unit": "g"
-    },
-    "monoUnsaturates": {
-      "value": 0,
-      "unit": "g"
-    },
-    "polyUnsaturates": {
-      "value": 0,
-      "unit": "g"
-    },
-    "polyols": {
-      "value": 0,
-      "unit": "g"
-    },
-    "starch": {
-      "value": 0,
-      "unit": "g"
-    },
-    "vitaminC": {
-      "value": 0,
-      "unit": "g"
-    },
-    "iron": {
-      "value": 0,
-      "unit": "g"
-    },
-    "vitaminB6": {
-      "value": 0,
-      "unit": "g"
-    },
-    "cobalamin": {
-      "value": 0,
-      "unit": "g"
-    },
-    "magnesium": {
-      "value": 0,
-      "unit": "g"
-    }
+    "calories": {"value": 140, "unit": "Kcal"},
+    // Additional nutrition data...
   }
 }
 ```
 </details>
 
-Response
+#### Response Example
 
 <details>
-```
+<summary>Click to expand!</summary>
+
+```json
 {
-  "config": {
-    "inputUnitType": "metric"
-  },
   "nutritionTableData": {
-    "calories": {
-      "value": 140,
-      "unit": "Kcal",
-      "label": "Calories"
-    },
-    "energy": {
-      "value": 585.76,
-      "unit": "kJ",
-      "label": "Energy"
-    },
-    "servingPerContainer": {
-      "value": 8,
-      "unit": "g"
-    }, 
-    "servingSize": {
-      "value": 131,
-      "unit": "g",
-      "label": "Serving Size"
-    },
-    "carbohydrateContent": {
-      "value": 22,
-      "unit": "g",
-      "label": "Carbohydrates"
-    },
-    "fiberContent": {
-      "value": 6.94,
-      "unit": "g",
-      "label": "Fiber"
-    },
-    "sugarContent": {
-      "value": 2,
-      "unit": "g",
-      "label": "Sugars"
-    },
-    "starch": {
-      "value": 0,
-      "unit": "mg",
-      "label": "Starch"
-    },
-    "cholesterolContent": {
-      "value": 0,
-      "unit": "mg",
-      "label": "Cholesterol"
-    },
-    "proteinContent": {
-      "value": 6,
-      "unit": "g",
-      "label": "Protein"
-    },
-    "sodiumContent": {
-      "value": 440,
-      "unit": "mg",
-      "label": "Sodium"
-    },
-    "fatContent": {
-      "value": 3.5,
-      "unit": "g",
-      "label": "Fat"
-    },
-    "saturatedFatContent": {
-      "value": 200,
-      "unit": "mg",
-      "label": "Saturated Fats"
-    },
-    "transFatContent": {
-      "value": 0,
-      "unit": "mg",
-      "label": "Trans Fats"
-    },
-    "unsaturatedFatContent": {
-      "value": 0,
-      "unit": "mg",
-      "label": "Unsaturated Fats"
-    },
-    "monoUnsaturates": {
-      "value": 0,
-      "unit": "mg",
-      "label": "Mono Unsaturated Fats"
-    },
-    "polyUnsaturates": {
-      "value": 0,
-      "unit": "mg",
-      "label": "Poly Unsaturated Fats"
-    },
-    "polyols": {
-      "value": 0,
-      "unit": "mg",
-      "label": "Polyols"
-    },
-    "potassium": {
-      "value": 520,
-      "unit": "mg",
-      "label": "Potassium"
-    },
-    "calcium": {
-      "value": 0,
-      "unit": "mg",
-      "label": "Calcium"
-    },
-    "vitaminD": {
-      "value": 0,
-      "unit": "mg",
-      "label": "Vitamin D"
-    },
-    "vitaminB6": {
-      "label": "Vitamin B6",
-      "unit": "mg",
-      "value": 0
-    },
-    "vitaminC": {
-      "label": "Vitamin C",
-      "unit": "mg",
-      "value": 0
-    },
-    "iron": {
-      "label": "Iron",
-      "unit": "mg",
-      "value": 0
-    },
-    "magnesium": {
-      "label": "Magnesium",
-      "unit": "mg",
-      "value": 0
-    }
+    "calories": {"value": 140, "unit": "Kcal", "label": "Calories"},
+    // Translated and calculated nutrition data...
   },
   "labels": {
-    "amountPerServingLabel": "Amount per Serving",
-    "percentDailyValueLabel": "Percent Daily",
-    "percentDailyValueSubtext": "Percent Daily subtext",
-    "dailyValueLabel": "Daily Value",
-    "nutritionFactsLabel": "Nutrition Facts"
+    // Customizable labels for UI...
   }
 }
 ```
 </details>
 
+## Contributing ✨
 
-## Contributors Guide
-- [ ] Insure translations are working
-- [ ] Adding other languages
-- [ ] Adding puppeteer screen shotting of frontend rendered nutrition table
-- [ ] Separating Frontend nutrition table into npm component
+We welcome contributions! Here are some ways you can help:
+- Ensure translations are accurate and up-to-date.
+- Help add support for additional languages.
+- Contribute to our front-end by adding features like screenshot capturing of the rendered nutrition table using Puppeteer.
+- Work on separating the front-end nutrition table into an npm component for easier reuse.
 
-## License
-- The project is not to be used for any commercial use wihout the prior agreement of the original Author
+## Planned Features 🌈
+- **API Authentication**: Implement API keys for secure access.
+- **Interactive Documentation**: Utilize tools like Swagger for live API testing.
+- **Enhanced Localization**: Extend unit localization to cover all globally recognized units.
+- **Front-End Library**: Develop a React/Vue component library for easy integration of nutrition tables into web applications.
 
-## Author
-- [simonorzel26](https://github.com/simonorzel26)
+## License 📄
+
+MIT
+
+## Meet the Author 👤
+
+- [simonorzel26](https://github.com/simonorzel26) - Creator and Maintainer
+
