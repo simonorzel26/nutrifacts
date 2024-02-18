@@ -14,22 +14,21 @@ import { dailyValues } from '../constants/dailyValues';
 import { NutritionTable } from 'src/components/NutritionTable';
 @Injectable()
 export default class NutritionTableService {
-  constructor(private readonly i18n: I18nService) { }
+  constructor(private readonly i18n: I18nService) {}
 
   getNutritionTable(
     reqNutritionTableData: ReqNutritionTableData,
   ): ResNutritionTableData {
     const energy = (labelId: string): NutritionalIngredient | undefined => {
-      const ingredient = reqNutritionTableData.nutritionTableData['calories'];
+      const ingredient =
+        reqNutritionTableData.nutritionTableData['caloriesUnit'];
       if (!ingredient) return;
 
-      const kJVal = calTokJ(
-        ingredient.value,
-      );
+      const kJVal = calTokJ(ingredient.value);
 
       return {
         value: kJVal,
-        unit: this.i18n.translate(`units.${labelId}`),
+        unit: this.i18n.translate(`${labelId}`),
         label: this.i18n.translate(`nutrition-table.${labelId}`),
       };
     };
@@ -39,16 +38,14 @@ export default class NutritionTableService {
       if (!ingredient) return;
 
       if (ingredient) {
-        if (labelId === 'calories' && ingredient.value) {
+        if (labelId === 'caloriesUnit' && ingredient.value) {
           return {
             value: ingredient.value,
-            unit: this.i18n.translate(`units.${labelId}`),
+            unit: this.i18n.translate(`${labelId}`),
             label: this.i18n.translate(`nutrition-table.${labelId}`),
           };
         } else {
-          const convertedValue = convert(
-            ingredient.value,
-          )
+          const convertedValue = convert(ingredient.value)
             .from(ingredient.unit as Unit)
             .toBest({ exclude: excludedUnits });
 
@@ -56,7 +53,7 @@ export default class NutritionTableService {
             value: convertedValue.val,
             unit: convertedValue.unit,
             label: this.i18n.translate(`nutrition-table.${labelId}`),
-            dailyValuePercent: 0
+            dailyValuePercent: 0,
           };
 
           const dailyReccomendedValue = dailyValues[labelId];
